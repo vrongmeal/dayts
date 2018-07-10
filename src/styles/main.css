@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,400,600");
+@import url("./calendar.css");
+@import url("./goto.css");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: Poppins;
+  font-weight: 400;
+  font-size: 1.25vw;
+}
+
+body {
+  line-height: 1;
+  background: #FFF;
+  color: #333;
+}
