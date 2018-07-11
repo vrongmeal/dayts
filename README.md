@@ -7,7 +7,7 @@ Check it out at [https://vrongmeal.github.io/dayts/](https://vrongmeal.github.io
 1. [Features](#features)
 2. [Todo](#todo)
 3. [Setup](#setup)
-4. [Screenshot](#Screenshot)
+4. [Screenshot](#screenshot)
 
 ## Features
 + Go to any date (given year > 1752)
