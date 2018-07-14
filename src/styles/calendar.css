@@ -5,175 +5,177 @@
   margin: 4.5rem;
 }
 
-  .calendar-heading {
-    width: 100%;
-    font-weight: 400;
-    font-size: 2.5rem;
-    margin-bottom: 2.5rem;
-  }
-    .calendar-heading::after {
-      content: ".";
-      color: #F00;
-    }
+.calendar-heading {
+  width: 100%;
+  font-weight: 400;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+.calendar-heading::after {
+  content: ".";
+  color: #f00;
+}
 
-  .calendar-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+.calendar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
-    .calendar-table {
-      border: none;
-      border-collapse: separate;
-      width: 65%;
-      border: none;
-    }
+.calendar-table {
+  border: none;
+  border-collapse: separate;
+  width: 65%;
+  border: none;
+}
 
-      .calendar-table tr {
-        height: 4rem;
-        vertical-align: middle;
-      }
+.calendar-table tr {
+  height: 4rem;
+  vertical-align: middle;
+}
 
-      .calendar-table thead {
-        font-weight: 600;
-      }
+.calendar-table thead {
+  font-weight: 600;
+}
 
-      .sunday {
-        color: #F00;
-      }
+.sunday {
+  color: #f00;
+}
 
-      .calendar-table th, td {
-        width: calc(100% / 7);
-        text-align: center;
-        cursor: default;
-        box-sizing: border-box;
-      }
+.calendar-table th,
+td {
+  width: calc(100% / 7);
+  text-align: center;
+  cursor: default;
+  box-sizing: border-box;
+}
 
-      .calendar-date {
-        cursor: pointer;
-      }
-        .calendar-date:hover, .calendar-date:focus {
-          background-color: rgba(255, 0, 0, .05);
-          border-radius: 0.5rem;
-        }
+.calendar-date {
+  cursor: pointer;
+}
+.calendar-date:hover,
+.calendar-date:focus {
+  background-color: rgba(255, 0, 0, 0.05);
+  border-radius: 0.5rem;
+}
 
-      .selected {
-        border: .1rem solid rgba(255, 0, 0, .2);
-        border-radius: 0.5rem;
-      }
+.selected {
+  border: 0.1rem solid rgba(255, 0, 0, 0.2);
+  border-radius: 0.5rem;
+}
 
-      .has-events::after {
-        content: "";
-        height: 0.5rem;
-        width: 0.5rem;
-        border: 0.1rem solid currentColor;
-        border-radius: 50%;
-        display: inline-block;
-        position: absolute;
-        box-sizing: border-box;
-        transform: translateY(-0.3rem);
-      }
+.has-events::after {
+  content: "";
+  height: 0.5rem;
+  width: 0.5rem;
+  border: 0.1rem solid currentColor;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  box-sizing: border-box;
+  transform: translateY(-0.3rem);
+}
 
-    .calendar-info {
-      width: 31%;
-    }
+.calendar-info {
+  width: 31%;
+}
 
-      .info-date {
-        font-size: 1.9rem;
-        font-weight: 200;
-        text-transform: capitalize;
-        margin-bottom: 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-content: center;
-      }
+.info-date {
+  font-size: 1.9rem;
+  font-weight: 200;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
 
-        .date-new-event {
-          cursor: pointer;
-        }
-          .date-new-event::before {
-            content: "+";
-          }
-          .date-new-event:hover {
-            opacity: 0.75;
-          }
+.date-new-event {
+  cursor: pointer;
+}
+.date-new-event::before {
+  content: "+";
+}
+.date-new-event:hover {
+  opacity: 0.75;
+}
 
-      .info-events {
-        width: 100%;
-        max-height: 26rem;
-        overflow-y: scroll;
-      }
+.info-events {
+  width: 100%;
+  max-height: 26rem;
+  overflow-y: scroll;
+}
 
-        .events-card {
-          width: 100%;
-          padding: 0.75rem;
-          border-radius: 0.5rem;
-          background: rgba(0, 0, 0, .03);
-          margin-bottom: 0.5rem;
-          box-sizing: border-box;
-          cursor: pointer;
-        }
-          .events-card:hover {
-            background: rgba(0, 0, 0, .07);
-          }
+.events-card {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.03);
+  margin-bottom: 0.5rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.events-card:hover {
+  background: rgba(0, 0, 0, 0.07);
+}
 
-          .close-btn {
-            position: absolute;
-            transform: translate(20.5rem, -1rem);
-            height: 1.2rem;
-            width: 1.2rem;
-            padding-top: 0.13rem;
-            padding-left: 0.05rem;
-            text-align: center;
-            background: rgba(0, 0, 0, .5);
-            border-radius: 50%;
-            box-sizing: border-box;
-            color: #FFF;
-            display: none;
-          }
-            .close-btn:hover {
-              background: rgba(255, 0, 0, 0.7);
-            }
-          .events-card:hover .close-btn {
-            display: block;
-          }
+.close-btn {
+  position: absolute;
+  transform: translate(20.5rem, -1rem);
+  height: 1.2rem;
+  width: 1.2rem;
+  padding-top: 0.13rem;
+  padding-left: 0.05rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: #fff;
+  display: none;
+}
+.close-btn:hover {
+  background: rgba(255, 0, 0, 0.7);
+}
+.events-card:hover .close-btn {
+  display: block;
+}
 
-          .card-time {
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: capitalize;
-            margin-bottom: 0.6rem;
-          }
+.card-time {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 0.6rem;
+}
 
-          .card-content {
-            font-size: 0.95rem;
-            line-height: 1.2;
-          }
+.card-content {
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
 
-  .arrow-btn {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 3rem;
-    width: 3rem;
-    padding: .8rem;
-    background-color: rgba(0, 0, 0, .03);
-    border-radius: 50%;
-    text-align: center;
-    cursor: pointer;
-    box-sizing: border-box;
-    font-size: 1.5rem;
-    overflow: hidden;
-  }
-    .arrow-btn:hover {
-      background-color: rgba(0, 0, 0, .07);
-    }
+.arrow-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 3rem;
+  width: 3rem;
+  padding: 0.8rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  overflow: hidden;
+}
+.arrow-btn:hover {
+  background-color: rgba(0, 0, 0, 0.07);
+}
 
-  .arrow-btn--left {
-    left: 1rem;
-  }
+.arrow-btn--left {
+  left: 1rem;
+}
 
-  .arrow-btn--right {
-    right: 1rem;
-  }
+.arrow-btn--right {
+  right: 1rem;
+}

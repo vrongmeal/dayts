@@ -10,7 +10,7 @@ export const isLeap = year => {
   else if (year % 100 !== 0) return true;
   else if (year % 400 !== 0) return false;
   else return true;
-}
+};
 
 /**
  * get Number of days in a month
@@ -22,23 +22,35 @@ export const isLeap = year => {
  */
 export const getNumDaysInMonth = (month, year) => {
   switch (month) {
-    case 1: return 31;
+    case 1:
+      return 31;
     case 2:
       if (isLeap(year)) return 29;
       else return 28;
-    case 3: return 31;
-    case 4: return 30;
-    case 5: return 31;
-    case 6: return 30;
-    case 7: return 31;
-    case 8: return 31;
-    case 9: return 30;
-    case 10: return 31;
-    case 11: return 30;
-    case 12: return 31;
-    default: return 0;
+    case 3:
+      return 31;
+    case 4:
+      return 30;
+    case 5:
+      return 31;
+    case 6:
+      return 30;
+    case 7:
+      return 31;
+    case 8:
+      return 31;
+    case 9:
+      return 30;
+    case 10:
+      return 31;
+    case 11:
+      return 30;
+    case 12:
+      return 31;
+    default:
+      return 0;
   }
-}
+};
 
 /**
  * get day of month
@@ -55,10 +67,15 @@ export const getDayOfMonth = (date, month, year) => {
   const t = [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4];
   year -= month < 3 ? month : 0;
   return (
-    (year + Math.floor(year / 4) - Math.floor(year / 100) +
-    Math.floor(year / 400) + t[month - 1] + date) % 7
+    (year +
+      Math.floor(year / 4) -
+      Math.floor(year / 100) +
+      Math.floor(year / 400) +
+      t[month - 1] +
+      date) %
+    7
   );
-}
+};
 
 /**
  * Checks if current date is valid or not
@@ -74,7 +91,7 @@ export const isValidDate = (date, month, year) => {
   else if (month < 1 || month > 12) return false;
   else if (date < 1 || date > getNumDaysInMonth(month, year)) return false;
   return true;
-}
+};
 
 /**
  * Returns name of month
@@ -84,30 +101,42 @@ export const isValidDate = (date, month, year) => {
  * @returns {String}
  */
 export const nameOfMonth = month => {
-  switch(month) {
-    case 1: return "january";
-    case 2: return "february";
-    case 3: return "march";
-    case 4: return "april";
-    case 5: return "may";
-    case 6: return "june";
-    case 7: return "july";
-    case 8: return "august";
-    case 9: return "september";
-    case 10: return "october";
-    case 11: return "november";
-    case 12: return "december";
-    default: return "invalid month";
+  switch (month) {
+    case 1:
+      return "january";
+    case 2:
+      return "february";
+    case 3:
+      return "march";
+    case 4:
+      return "april";
+    case 5:
+      return "may";
+    case 6:
+      return "june";
+    case 7:
+      return "july";
+    case 8:
+      return "august";
+    case 9:
+      return "september";
+    case 10:
+      return "october";
+    case 11:
+      return "november";
+    case 12:
+      return "december";
+    default:
+      return "invalid month";
   }
 };
 
-
 /**
  * Returns previous month
- * 
+ *
  * @param {Number} month
  * @param {Number} year
- * 
+ *
  * @returns {Array}
  * [date, month, year]
  */
@@ -123,10 +152,10 @@ export const previousMonth = (date, month, year) => {
 
 /**
  * Returns Next month
- * 
+ *
  * @param {Number} month
  * @param {Number} year
- * 
+ *
  * @returns {Array}
  * [date, month, year]
  */

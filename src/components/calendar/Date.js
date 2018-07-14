@@ -26,15 +26,13 @@ class Date extends React.Component {
     let className = "calendar-date";
     if (this.props.isSunday) className += " sunday";
     if (this.state.active) className += " selected";
-    let date = this.props.value
-    ? (
-      <td
-        onClick={this.handleClick}
-        className={className}
-      >
-        { this.props.value }
+    let date = this.props.value ? (
+      <td onClick={this.handleClick} className={className}>
+        {this.props.value}
       </td>
-    ) : <td />;
+    ) : (
+      <td />
+    );
     return date;
   }
 }
@@ -54,4 +52,7 @@ const mapDispatchToProps = dispatch => ({
   calendarActions: bindActionCreators(calendarActions, dispatch)
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Date);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Date);

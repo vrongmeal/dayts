@@ -137,13 +137,18 @@ class Calendar extends React.Component {
                 {calendarUtils.nameOfMonth(this.state.month) + ", "}
                 {this.state.year}
               </div>
-              <div className="date-new-event" title="Create new event" onClick={_ => {alert("coming soon")}} />
+              <div
+                className="date-new-event"
+                title="Create new event"
+                onClick={_ => {
+                  alert("coming soon");
+                }}
+              />
             </div>
-            <div className="info-events">
-            </div>
+            <div className="info-events" />
           </div>
         </div>
-        <div 
+        <div
           className="arrow-btn arrow-btn--right"
           onClick={this.nextMonthHandler}
         >
@@ -170,4 +175,7 @@ const mapDispatchToProps = dispatch => ({
   calendarActions: bindActionCreators(calendarActions, dispatch)
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Calendar);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Calendar);

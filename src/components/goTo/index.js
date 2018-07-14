@@ -78,7 +78,7 @@ class GoTo extends React.Component {
     return (
       <form className="goto-bar">
         <div className="bar-heading">Time Machine</div>
-        <div className="bar-today"  onClick={this.handleTodayClick}>
+        <div className="bar-today" onClick={this.handleTodayClick}>
           <div className="today-heading">Today</div>
           <div className="today-date">
             {this.today.getDate() + " "}
@@ -133,4 +133,7 @@ const mapDispatchToProps = dispatch => ({
   calendarActions: bindActionCreators(calendarActions, dispatch)
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(GoTo);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GoTo);
