@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import Date from "./Date";
+import CreateEvent from "../events/createEvent";
 import * as calendarUtils from "../../utils/calendarUtils";
 import * as calendarActions from "../../actions/calendarActions";
 
@@ -12,11 +13,15 @@ class Calendar extends React.Component {
     this.state = {
       date: this.props.date,
       month: this.props.month,
-      year: this.props.year
+      year: this.props.year,
+      isCreateEventPopupActive: false
     };
     this.makeCalendar = this.makeCalendar.bind(this);
     this.previousMonthHandler = this.previousMonthHandler.bind(this);
     this.nextMonthHandler = this.nextMonthHandler.bind(this);
+    this.showCreateEventPopup = this.showCreateEventPopup.bind(this);
+    this.hideCreateEventPopup = this.hideCreateEventPopup.bind(this);
+    this.closeCreateEventPopup = this.closeCreateEventPopup.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -117,6 +122,23 @@ class Calendar extends React.Component {
     this.props.calendarActions.setYear(newDay[2]);
   }
 
+  showCreateEventPopup(e) {
+    e.preventDefault();
+    this.setState({ isCreateEventPopupActive: true }, () => {
+      document.addEventListener("click", this.hideCreateEventPopup);
+    });
+  }
+
+  closeCreateEventPopup() {
+    this.setState({ isCreateEventPopupActive: false }, () => {
+      document.removeEventListener("click", this.hideCreateEventPopup);
+    });
+  }
+
+  hideCreateEventPopup(e) {
+    if (!this.createEventMenu.contains(e.target)) this.closeCreateEventPopup();
+  }
+
   render() {
     const calendar = this.makeCalendar();
     return (
@@ -138,12 +160,24 @@ class Calendar extends React.Component {
                 {this.state.year}
               </div>
               <div
-                className="date-new-event"
+                className={
+                  this.state.isCreateEventPopupActive
+                    ? "date-new-event active"
+                    : "date-new-event inactive"
+                }
                 title="Create new event"
-                onClick={_ => {
-                  alert("coming soon");
-                }}
+                onClick={this.showCreateEventPopup}
               />
+              {this.state.isCreateEventPopupActive && (
+                <div
+                  className="create-event-container"
+                  ref={element => {
+                    this.createEventMenu = element;
+                  }}
+                >
+                  <CreateEvent close={this.closeCreateEventPopup} />
+                </div>
+              )}
             </div>
             <div className="info-events" />
           </div>

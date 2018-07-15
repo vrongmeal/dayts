@@ -97,8 +97,11 @@ td {
 .date-new-event::before {
   content: "+";
 }
-.date-new-event:hover {
+.date-new-event.inactive:hover {
   opacity: 0.75;
+}
+.date-new-event.active {
+  color: #f00;
 }
 
 .info-events {
