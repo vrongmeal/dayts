@@ -6,178 +6,183 @@
   margin: 4.5rem;
 }
 
-  .calendar-heading {
-    width: 100%;
-    font-weight: 400;
-    font-size: 2.5rem;
-    margin-bottom: 2.5rem;
-  }
-    .calendar-heading::after {
-      content: ".";
-      color: #F00;
-    }
+.calendar-heading {
+  width: 100%;
+  font-weight: 400;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+.calendar-heading::after {
+  content: ".";
+  color: #f00;
+}
 
-  .calendar-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
+.calendar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 
-    .calendar-table {
-      border: none;
-      border-collapse: separate;
-      width: 65%;
-      border: none;
-    }
+.calendar-table {
+  border: none;
+  border-collapse: separate;
+  width: 65%;
+  border: none;
+}
 
-      .calendar-table tr {
-        height: 4rem;
-        vertical-align: middle;
-      }
+.calendar-table tr {
+  height: 4rem;
+  vertical-align: middle;
+}
 
-      .calendar-table thead {
-        font-weight: 600;
-      }
+.calendar-table thead {
+  font-weight: 600;
+}
 
-      .sunday {
-        color: #F00;
-      }
+.sunday {
+  color: #f00;
+}
 
-      .calendar-table th, td {
-        width: calc(100% / 7);
-        text-align: center;
-        cursor: default;
-        box-sizing: border-box;
-      }
+.calendar-table th,
+td {
+  width: calc(100% / 7);
+  text-align: center;
+  cursor: default;
+  box-sizing: border-box;
+}
 
-      .calendar-date {
-        cursor: pointer;
-      }
-        .calendar-date:hover, .calendar-date:focus {
-          background-color: rgba(255, 0, 0, .05);
-          border-radius: 0.5rem;
-        }
+.calendar-date {
+  cursor: pointer;
+}
+.calendar-date:hover,
+.calendar-date:focus {
+  background-color: rgba(255, 0, 0, 0.05);
+  border-radius: 0.5rem;
+}
 
-      .selected {
-        border: .1rem solid rgba(255, 0, 0, .2);
-        border-radius: 0.5rem;
-      }
+.selected {
+  border: 0.1rem solid rgba(255, 0, 0, 0.2);
+  border-radius: 0.5rem;
+}
 
-      .has-events::after {
-        content: "";
-        height: 0.5rem;
-        width: 0.5rem;
-        border: 0.1rem solid currentColor;
-        border-radius: 50%;
-        display: inline-block;
-        position: absolute;
-        box-sizing: border-box;
-        transform: translateY(-0.3rem);
-      }
+.has-events::after {
+  content: "";
+  height: 0.5rem;
+  width: 0.5rem;
+  border: 0.1rem solid currentColor;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  box-sizing: border-box;
+  transform: translateY(-0.3rem);
+}
 
-    .calendar-info {
-      width: 31%;
-    }
+.calendar-info {
+  width: 31%;
+}
 
-      .info-date {
-        font-size: 1.9rem;
-        font-weight: 200;
-        text-transform: capitalize;
-        margin-bottom: 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-content: center;
-      }
+.info-date {
+  font-size: 1.9rem;
+  font-weight: 200;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
 
-        .date-new-event {
-          cursor: pointer;
-        }
-          .date-new-event::before {
-            content: "+";
-          }
-          .date-new-event:hover {
-            opacity: 0.75;
-          }
+.date-new-event {
+  cursor: pointer;
+}
+.date-new-event::before {
+  content: "+";
+}
+.date-new-event.inactive:hover {
+  opacity: 0.75;
+}
+.date-new-event.active {
+  color: #f00;
+}
 
-      .info-events {
-        width: 100%;
-        max-height: 26rem;
-        overflow-y: scroll;
-      }
+.info-events {
+  width: 100%;
+  max-height: 26rem;
+  overflow-y: scroll;
+}
 
-        .events-card {
-          width: 100%;
-          padding: 0.75rem;
-          border-radius: 0.5rem;
-          background: rgba(0, 0, 0, .03);
-          margin-bottom: 0.5rem;
-          box-sizing: border-box;
-          cursor: pointer;
-        }
-          .events-card:hover {
-            background: rgba(0, 0, 0, .07);
-          }
+.events-card {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.03);
+  margin-bottom: 0.5rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.events-card:hover {
+  background: rgba(0, 0, 0, 0.07);
+}
 
-          .close-btn {
-            position: absolute;
-            transform: translate(20.5rem, -1rem);
-            height: 1.2rem;
-            width: 1.2rem;
-            padding-top: 0.13rem;
-            padding-left: 0.05rem;
-            text-align: center;
-            background: rgba(0, 0, 0, .5);
-            border-radius: 50%;
-            box-sizing: border-box;
-            color: #FFF;
-            display: none;
-          }
-            .close-btn:hover {
-              background: rgba(255, 0, 0, 0.7);
-            }
-          .events-card:hover .close-btn {
-            display: block;
-          }
+.close-btn {
+  position: absolute;
+  transform: translate(20.5rem, -1rem);
+  height: 1.2rem;
+  width: 1.2rem;
+  padding-top: 0.13rem;
+  padding-left: 0.05rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: #fff;
+  display: none;
+}
+.close-btn:hover {
+  background: rgba(255, 0, 0, 0.7);
+}
+.events-card:hover .close-btn {
+  display: block;
+}
 
-          .card-time {
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: capitalize;
-            margin-bottom: 0.6rem;
-          }
+.card-time {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 0.6rem;
+}
 
-          .card-content {
-            font-size: 0.95rem;
-            line-height: 1.2;
-          }
+.card-content {
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
 
-  .arrow-btn {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 3rem;
-    width: 3rem;
-    padding: .8rem;
-    background-color: rgba(0, 0, 0, .03);
-    border-radius: 50%;
-    text-align: center;
-    cursor: pointer;
-    box-sizing: border-box;
-    font-size: 1.5rem;
-    overflow: hidden;
-  }
-    .arrow-btn:hover {
-      background-color: rgba(0, 0, 0, .07);
-    }
+.arrow-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 3rem;
+  width: 3rem;
+  padding: 0.8rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  overflow: hidden;
+}
+.arrow-btn:hover {
+  background-color: rgba(0, 0, 0, 0.07);
+}
 
-  .arrow-btn--left {
-    left: 1rem;
-  }
+.arrow-btn--left {
+  left: 1rem;
+}
 
-  .arrow-btn--right {
-    right: 1rem;
-  }
+.arrow-btn--right {
+  right: 1rem;
+}
 
 .goto-bar {
   display: flex;
@@ -189,92 +194,159 @@
   bottom: 1rem;
   box-sizing: border-box;
   flex-direction: row;
-  background-color: #FFF;
+  background-color: #fff;
 }
 
-  .bar-heading {
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
-    padding: 1.25rem 0;
-    width: 16%;
-    text-align: center;
-    background-color: #E3E3E3;
-    text-transform: capitalize;
-  }
+.bar-heading {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  padding: 1.25rem 0;
+  width: 16%;
+  text-align: center;
+  background-color: #e3e3e3;
+  text-transform: capitalize;
+}
 
-  .bar-input {
-    border-left: 0.15rem solid #E3E3E3;
-    border-top: 0.15rem solid #E3E3E3;
-    border-bottom: 0.15rem solid #E3E3E3;
-    border-right: 0;
-    display: block;
-    box-sizing: border-box;
-    height: 3.5rem;
-    padding: 0 1rem;
-    font: 400 1rem "Poppins";
-    outline: none;
-    letter-spacing: 0.3rem;
-  }
-    .bar-input::placeholder {
-      letter-spacing: initial;
-      color: #333;
-    }
-  .bar-input.date, .bar-input.month {
-    width: 10%;
-  }
-  .bar-input.year {
-    width: 14%;
-  }
+.bar-input {
+  border-left: 0.15rem solid #e3e3e3;
+  border-top: 0.15rem solid #e3e3e3;
+  border-bottom: 0.15rem solid #e3e3e3;
+  border-right: 0;
+  display: block;
+  box-sizing: border-box;
+  height: 3.5rem;
+  padding: 0 1rem;
+  font: 400 1rem "Poppins";
+  outline: none;
+  letter-spacing: 0.3rem;
+}
+.bar-input::placeholder {
+  letter-spacing: initial;
+  color: #333;
+}
+.bar-input.date,
+.bar-input.month {
+  width: 10%;
+}
+.bar-input.year {
+  width: 14%;
+}
 
-  .bar-submit {
-    width: 10%;
-    height: 3.5rem;
-    box-sizing: border-box;
-    text-align: center;
-    background-color: rgba(255, 0, 0, 0.3);
-    cursor: pointer;
-    border: none;
-    font: 400 1.5rem "Poppins";
-    color: #111;
-    border-top-right-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    opacity: 0.75;
-    outline: none;
-  }
-    .bar-submit:hover, .bar-submit:focus {
-      opacity: 1;
-    }
+.bar-submit {
+  width: 10%;
+  height: 3.5rem;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: rgba(255, 0, 0, 0.3);
+  cursor: pointer;
+  border: none;
+  font: 400 1.5rem "Poppins";
+  color: #111;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  opacity: 0.75;
+  outline: none;
+}
+.bar-submit:hover,
+.bar-submit:focus {
+  opacity: 1;
+}
 
-  .bar-today {
-    display: inline-flex;
-    width: 40%;
-    border-top: 0.15rem solid #E3E3E3;
-    border-bottom: 0.15rem solid #E3E3E3;
-    border-left: 0;
-    border-right: 0;
-    height: 3.5rem;
-    box-sizing: border-box;
-    cursor: pointer;
-    padding: 0.6rem 1rem;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-  }
-    .bar-today:hover {
-      background-color: #F2F2F2;
-    }
+.bar-today {
+  display: inline-flex;
+  width: 40%;
+  border-top: 0.15rem solid #e3e3e3;
+  border-bottom: 0.15rem solid #e3e3e3;
+  border-left: 0;
+  border-right: 0;
+  height: 3.5rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.bar-today:hover {
+  background-color: #f2f2f2;
+}
 
-    .today-heading {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-right: 1rem;
-    }
+.today-heading {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-right: 1rem;
+}
 
-    .today-date {
-      text-transform: capitalize;
-      font-size: 2rem;
-      font-weight: 200;
-    }
+.today-date {
+  text-transform: capitalize;
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+.create-event-container {
+  position: absolute;
+  width: 25rem;
+  height: auto;
+  top: 12rem;
+  right: 3rem;
+}
+
+.create-event-box {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.create-event-heading {
+  font-size: 1.3rem;
+  font-weight: 200;
+  display: block;
+  margin-bottom: 0.7rem;
+}
+
+.create-event-title-q {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+  outline: none;
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  font: 400 1rem "Poppins", sans-serif;
+  margin-bottom: 0.7rem;
+}
+.create-event-title-q:focus {
+  border-bottom-color: rgba(255, 0, 0, 0.5);
+}
+
+.create-event-button {
+  border-radius: 0.5rem;
+  font: 400 1rem "Poppins", sans-serif;
+  padding: 0.5rem 1rem;
+  border: 0.05rem solid transparent;
+  outline: none;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.create-event-button:hover,
+.create-event-button:focus {
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
+}
+.create-event--submit-button {
+  background: rgba(255, 0, 0, 0.6);
+  color: #ffffff;
+  margin-right: 1rem;
+}
+.create-event--cancel-button {
+  background: rgba(0, 0, 0, 0.05);
+  color: #323232;
+  border-color: rgba(0, 0, 0, 0.1);
+}
 
 * {
   margin: 0;
@@ -282,14 +354,14 @@
 }
 
 html {
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
   font-weight: 400;
   font-size: 1.25vw;
 }
 
 body {
   line-height: 1;
-  background: #FFF;
+  background: #fff;
   color: #333;
 }
 
