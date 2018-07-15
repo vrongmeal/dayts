@@ -30,7 +30,11 @@ _More features to come, see [todo](#todo)_
 
 ## Screenshot
 
+**Dayts Preview**
+
 ![Dayts Preview](./images/DaytsPreview.png)
+
+**Create Event Popup menu**
 
 ![Create Event Popup menu](./images/CreateEventPopup.png)
 
