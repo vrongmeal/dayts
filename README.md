@@ -12,6 +12,7 @@ Check it out at [https://vrongmeal.github.io/dayts/](https://vrongmeal.github.io
 ## Features
 
 - Go to any date (given year > 1752)
+- Add events for any date, also can delete them
 
 _More features to come, see [todo](#todo)_
 
@@ -19,7 +20,7 @@ _More features to come, see [todo](#todo)_
 
 - [x] Add arrow buttons to navigate to adjascent months
 - [x] Add option to create events and display them
-- [ ] Add labels for events
+- [ ] Add labels for events, make them editable
 
 ## Setup
 
@@ -37,6 +38,10 @@ _More features to come, see [todo](#todo)_
 **Create Event Popup menu**
 
 ![Create Event Popup menu](./images/CreateEventPopup.png)
+
+**Events List**
+
+![Events List](./images/EventsList.png)
 
 ---
 
