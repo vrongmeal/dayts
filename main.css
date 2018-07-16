@@ -109,52 +109,7 @@ td {
   width: 100%;
   max-height: 26rem;
   overflow-y: scroll;
-}
-
-.events-card {
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  background: rgba(0, 0, 0, 0.03);
-  margin-bottom: 0.5rem;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-.events-card:hover {
-  background: rgba(0, 0, 0, 0.07);
-}
-
-.close-btn {
-  position: absolute;
-  transform: translate(20.5rem, -1rem);
-  height: 1.2rem;
-  width: 1.2rem;
-  padding-top: 0.13rem;
-  padding-left: 0.05rem;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  box-sizing: border-box;
-  color: #fff;
-  display: none;
-}
-.close-btn:hover {
-  background: rgba(255, 0, 0, 0.7);
-}
-.events-card:hover .close-btn {
-  display: block;
-}
-
-.card-time {
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: capitalize;
-  margin-bottom: 0.6rem;
-}
-
-.card-content {
-  font-size: 0.95rem;
-  line-height: 1.2;
+  position: relative;
 }
 
 .arrow-btn {
@@ -289,6 +244,7 @@ td {
   height: auto;
   top: 12rem;
   right: 3rem;
+  z-index: 9;
 }
 
 .create-event-box {
@@ -298,6 +254,7 @@ td {
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }
 
 .create-event-heading {
@@ -346,6 +303,58 @@ td {
   background: rgba(0, 0, 0, 0.05);
   color: #323232;
   border-color: rgba(0, 0, 0, 0.1);
+}
+
+.events-card {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.03);
+  margin-bottom: 0.5rem;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.events-card:hover {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+.close-btn {
+  position: absolute;
+  transform: translate(calc(-100% + 1rem), -0rem);
+  height: 1.2rem;
+  width: 1.2rem;
+  padding-top: 0.13rem;
+  padding-left: 0.05rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  box-sizing: border-box;
+  color: #fff;
+  display: none;
+}
+.close-btn:hover {
+  background: rgba(255, 0, 0, 0.7);
+}
+.events-card:hover .close-btn {
+  display: block;
+}
+
+.card-time {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-bottom: 0.6rem;
+}
+
+.card-content {
+  font-size: 0.95rem;
+  line-height: 1.2;
+  margin-left: 0;
+  transition: 0.1s;
+}
+
+.events-card:hover .card-content {
+  margin-left: 1.5rem;
 }
 
 * {
