@@ -18,7 +18,7 @@ _More features to come, see [todo](#todo)_
 ## Todo
 
 - [x] Add arrow buttons to navigate to adjascent months
-- [ ] Add option to create events and display them
+- [x] Add option to create events and display them
 - [ ] Add labels for events
 
 ## Setup
