@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import Date from "./Date";
 import CreateEvent from "../events/createEvent";
+import EventCard from "../events/EventCard";
 import * as calendarUtils from "../../utils/calendarUtils";
 import * as calendarActions from "../../actions/calendarActions";
 
@@ -14,6 +15,7 @@ class Calendar extends React.Component {
       date: this.props.date,
       month: this.props.month,
       year: this.props.year,
+      events: this.props.events,
       isCreateEventPopupActive: false
     };
     this.makeCalendar = this.makeCalendar.bind(this);
@@ -33,6 +35,9 @@ class Calendar extends React.Component {
     }
     if (nextProps.year !== this.state.year) {
       this.setState({ year: nextProps.year });
+    }
+    if (nextProps.events !== this.state.events) {
+      this.setState({ events: nextProps.events });
     }
   }
 
@@ -141,6 +146,18 @@ class Calendar extends React.Component {
 
   render() {
     const calendar = this.makeCalendar();
+    const events = (
+      <div className="info-events">
+        {this.props.events.map(
+          event =>
+            this.props.date === event.date &&
+            this.props.month === event.month &&
+            this.props.year === event.year && (
+              <EventCard {...event} key={event.id} />
+            )
+        )}
+      </div>
+    );
     return (
       <div className="calendar">
         <div
@@ -179,7 +196,7 @@ class Calendar extends React.Component {
                 </div>
               )}
             </div>
-            <div className="info-events" />
+            {events}
           </div>
         </div>
         <div
@@ -196,13 +213,15 @@ class Calendar extends React.Component {
 Calendar.propTypes = {
   date: PropTypes.number.isRequired,
   month: PropTypes.number.isRequired,
-  year: PropTypes.number.isRequired
+  year: PropTypes.number.isRequired,
+  events: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => ({
   date: state.calendar.date,
   month: state.calendar.month,
-  year: state.calendar.year
+  year: state.calendar.year,
+  events: state.events
 });
 
 const mapDispatchToProps = dispatch => ({

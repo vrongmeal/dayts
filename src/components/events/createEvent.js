@@ -35,7 +35,6 @@ class CreateEvent extends React.Component {
       this.state.month,
       this.state.year
     );
-    console.log(this.props.events);
     this.props.close();
   }
 
