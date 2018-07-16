@@ -41,7 +41,7 @@ _More features to come, see [todo](#todo)_
 
 **Events List**
 
-![Events List](./images/EventsList.png)
+![Events List Preview](./images/EventsListPreview.png)
 
 ---
 
