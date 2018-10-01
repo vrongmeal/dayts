@@ -88,18 +88,21 @@ class GoTo extends React.Component {
         </div>
         <input
           type="number"
+          min="1"
           placeholder="Date"
           className="bar-input date"
           onChange={this.handleDateChange}
         />
         <input
           type="number"
+          min="1"
           placeholder="Month"
           className="bar-input month"
           onChange={this.handleMonthChange}
         />
         <input
           type="number"
+          min="1753"
           placeholder="Year"
           className="bar-input year"
           onChange={this.handleYearChange}
