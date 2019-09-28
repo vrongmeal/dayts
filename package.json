@@ -4,7 +4,7 @@
   "description": "Web based calendar app made with react and redux",
   "main": "./src/index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
+    "start": "webpack-dev-server --host 0.0.0.0 --mode development --open",
     "dev": "webpack --mode development ./src/index.js --output ./build/bundle.js",
     "build": "webpack --mode production ./src/index.js --output ./build/bundle.js",
     "predeploy": "npm run build",
